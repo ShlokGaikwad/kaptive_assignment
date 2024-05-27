@@ -5,6 +5,9 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 const userRouter = require("./routes/user.route");
+const transactionRouter = require("./routes/transction.route");
+const categoryRouter = require("./routes/category.route");
+const budgetRouter = require("./routes/budget.route");
 
 dotenv.config();
 const app = express();
@@ -13,6 +16,9 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use("/", userRouter);
+app.use("/", transactionRouter);
+app.use("/", categoryRouter);
+app.use("/", budgetRouter);
 
 app.get("/", (req, res) => {
   res.json("hello server");
