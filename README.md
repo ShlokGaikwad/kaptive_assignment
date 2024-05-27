@@ -27,7 +27,7 @@ This project is a backend system for managing personal finances. It includes fea
 ### User Authentication
 - Register a new user
 
-  - URL: POST /auth/register
+  - URL: POST /register
   - Request Body:
   ```bash
   {
@@ -38,7 +38,7 @@ This project is a backend system for managing personal finances. It includes fea
 
 - Login a user
 
-  - URL: POST /auth/login
+  - URL: POST /login
   - Request Body:
   ```bash
     {
@@ -55,6 +55,17 @@ This project is a backend system for managing personal finances. It includes fea
 
   - URL: POST /category
   - Requires authentication
+ 
+- add to an existing category
+
+  - URL: PUT /category/:id
+  - Requires authentication
+
+- Delete an existing category
+
+  - URL: PUT /category/:id
+  - Requires authentication
+     
   - Request Body:
 ```bash
 {
@@ -81,7 +92,16 @@ This project is a backend system for managing personal finances. It includes fea
 -  transactions
   -  URL: GET /transactions
   -  Requires authentication
-  -  Request Body:
+
+- add to an existing transaction
+
+  - URL: PUT /transaction/:id
+  - Requires authentication
+
+- Delete an existing transaction
+
+  - URL: PUT /transaction/:id
+  - Requires authentication
 
 ## Budgets
 - Get all budgets
@@ -100,10 +120,25 @@ This project is a backend system for managing personal finances. It includes fea
   "year": "number"
 }
 ```
+- add to an existing buget
+
+  - URL: PUT /budget/:id
+  - Requires authentication
+
+- Delete an existing budget
+
+  - URL: PUT /budget/:id
+  - Requires authentication
+
 ## Reports
 - Get category-wise transaction report
-  - URL: GET /transactions/report
+  - URL: GET /report/category-wise
   - Requires authentication
+ 
+- Get monthly transaction report
+    - URL: GET /report/monthly
+    - Requires authentication
+    - 
 ## Setup
 ### Prerequisites
 - Node.js
