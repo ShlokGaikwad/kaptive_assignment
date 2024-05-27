@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = evn("DATABASE_URL")
+  url      = "postgres://avnadmin:AVNS_wz8Z05jyhiZWPnx6DbV@pg-1069ba1b-shlokgaikwad8888-3950.h.aivencloud.com:11422/defaultdb?sslmode=require"
 }
 
 model User {
@@ -20,7 +20,7 @@ model User {
 model Transaction {
   id        Int       @id @default(autoincrement())
   amount    Float
-  type      String    // 'income' or 'expense'
+  type      TransactionType @default(expense)    // 'income' or 'expense'
   date      DateTime  @default(now())
   category  Category  @relation(fields: [categoryId], references: [id])
   categoryId Int
@@ -41,4 +41,10 @@ model Budget {
   year      Int
   user      User      @relation(fields: [userId], references: [id])
   userId    Int
+}
+
+
+enum TransactionType {
+  income
+  expense
 }

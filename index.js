@@ -8,6 +8,7 @@ const userRouter = require("./routes/user.route");
 const transactionRouter = require("./routes/transction.route");
 const categoryRouter = require("./routes/category.route");
 const budgetRouter = require("./routes/budget.route");
+const reportRouter = require("./routes/report.route");
 
 dotenv.config();
 const app = express();
@@ -19,6 +20,7 @@ app.use("/", userRouter);
 app.use("/", transactionRouter);
 app.use("/", categoryRouter);
 app.use("/", budgetRouter);
+app.use("/report", reportRouter);
 
 app.get("/", (req, res) => {
   res.json("hello server");
