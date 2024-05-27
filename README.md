@@ -134,7 +134,6 @@ This project is a backend system for managing personal finances. It includes fea
 - Get monthly transaction report
     - URL: GET /report/monthly
     - Requires authentication
-    - 
 ## Setup
 ### Prerequisites
 - Node.js
