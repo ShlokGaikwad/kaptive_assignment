@@ -46,32 +46,32 @@ This project is a backend system for managing personal finances. It includes fea
       "password": "string"
     }
   ```
-- Categories
+## Categories
   - Get all categories
 
     - URL: GET /categories
     - Requires authentication
-- Create a new category
-
-  - URL: POST /category
-  - Requires authentication
- 
-- add to an existing category
-
-  - URL: PUT /category/:id
-  - Requires authentication
-
-- Delete an existing category
-
-  - URL: PUT /category/:id
-  - Requires authentication
+  - Create a new category
+  
+    - URL: POST /category
+    - Requires authentication
+   
+  - add to an existing category
+  
+    - URL: PUT /category/:id
+    - Requires authentication
+  
+  - Delete an existing category
+  
+    - URL: PUT /category/:id
+    - Requires authentication
      
-  - Request Body:
-```bash
-{
-  "name": "string"
-}
-```
+    - Request Body:
+  ```bash
+  {
+    "name": "string"
+  }
+  ```
 ## Transactions
  - Get all transactions
 
@@ -89,10 +89,6 @@ This project is a backend system for managing personal finances. It includes fea
   "categoryId": "number"
 }
 ```
--  transactions
-  -  URL: GET /transactions
-  -  Requires authentication
-
 - add to an existing transaction
 
   - URL: PUT /transaction/:id
