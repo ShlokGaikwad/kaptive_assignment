@@ -36,109 +36,109 @@ This project is a backend system for managing personal finances. It includes fea
   }
   ```
 
-Login a user
+- Login a user
 
-URL: POST /auth/login
-Request Body:
-json
-Copy code
-{
-  "username": "string",
-  "password": "string"
-}
-Categories
-Get all categories
+  - URL: POST /auth/login
+  - Request Body:
+  ```bash
+    {
+      "username": "string",
+      "password": "string"
+    }
+  ```
+- Categories
+  - Get all categories
 
-URL: GET /categories
-Requires authentication
-Create a new category
+    - URL: GET /categories
+    - Requires authentication
+- Create a new category
 
-URL: POST /category
-Requires authentication
-Request Body:
-json
-Copy code
+  - URL: POST /category
+  - Requires authentication
+  - Request Body:
+```bash
 {
   "name": "string"
 }
-Transactions
-Get all transactions
+```
+## Transactions
+ - Get all transactions
 
-URL: GET /transactions
-Requires authentication
-Create a new transaction
+  - URL: GET /transactions
+  - Requires authentication
+- Create a new transaction
 
-URL: POST /transaction
-Requires authentication
-Request Body:
-json
-Copy code
+  - URL: POST /transaction
+  - Requires authentication
+  - Request Body:
+```bash
 {
   "amount": "number",
   "type": "string",  // "income" or "expense"
   "categoryId": "number"
 }
-Budgets
-Get all budgets
+```
+## Budgets
+- Get all budgets
 
-URL: GET /budget
-Requires authentication
-Create a new budget
+  - URL: GET /budget
+  - Requires authentication
+- Create a new budget
 
-URL: POST /budget
-Requires authentication
-Request Body:
-json
-Copy code
+  - URL: POST /budget
+  - Requires authentication
+  - Request Body:
+```bash
 {
   "amount": "number",
   "month": "number",
   "year": "number"
 }
-Reports
-Get category-wise transaction report
-URL: GET /transactions/report
-Requires authentication
-Setup
-Prerequisites
-Node.js
-PostgreSQL
-Installation
-Clone the repository:
+```
+## Reports
+- Get category-wise transaction report
+  - URL: GET /transactions/report
+  - Requires authentication
+## Setup
+### Prerequisites
+- Node.js
+- PostgreSQL
+### Installation
+1. Clone the repository:
 
-sh
-Copy code
+```bash
 git clone https://github.com/yourusername/your-repo-name.git
 cd your-repo-name
-Install dependencies:
+```
+2. Install dependencies:
 
-sh
-Copy code
+```bash
 npm install
-Set up environment variables:
+```
+3. Set up environment variables:
 Create a .env file in the root directory and add the following:
 
-env
-Copy code
+``` bash
 DATABASE_URL="postgresql://user:password@localhost:5432/your-database-name"
 JWT_SECRET="your-secret-key"
-Set up the database:
+```
+4. Set up the database:
 
-sh
-Copy code
+```bash
 npx prisma migrate dev
-Start the server:
+```
+5. Start the server:
 
-sh
-Copy code
+```bash
 npm start
-Usage
-Register a new user via the /auth/register endpoint.
-Authenticate the user via the /auth/login endpoint to receive a JWT token.
-Use the token to access other authenticated routes (e.g., creating transactions, budgets).
-Contributing
-Fork the repository.
-Create your feature branch (git checkout -b feature/your-feature).
-Commit your changes (git commit -m 'Add some feature').
-Push to the branch (git push origin feature/your-feature).
-Open a pull request.
+```
+## Usage
+1. Register a new user via the /auth/register endpoint.
+2. Authenticate the user via the /auth/login endpoint to receive a JWT token.
+3. Use the token to access other authenticated routes (e.g., creating transactions, budgets).
+## Contributing
+1. Fork the repository.
+2. Create your feature branch (git checkout -b feature/your-feature).
+3. Commit your changes (git commit -m 'Add some feature').
+4. Push to the branch (git push origin feature/your-feature).
+5. Open a pull request.
