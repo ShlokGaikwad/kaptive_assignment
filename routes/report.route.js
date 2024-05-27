@@ -47,13 +47,21 @@ reportRouter.get("/category-wise", authenticateToken, async (req, res) => {
       include: { category: true },
     });
 
-    // Aggregate the total amount per category
+    // Aggregate the total amount per category and type
     const categoryReport = transactions.reduce((acc, transaction) => {
       const categoryName = transaction.category.name;
+      const type = transaction.type; // "income" or "expense"
+
       if (!acc[categoryName]) {
-        acc[categoryName] = 0;
+        acc[categoryName] = { income: 0, expense: 0 };
       }
-      acc[categoryName] += transaction.amount;
+
+      if (type === "income") {
+        acc[categoryName].income += transaction.amount;
+      } else if (type === "expense") {
+        acc[categoryName].expense += transaction.amount;
+      }
+
       return acc;
     }, {});
 
