@@ -66,7 +66,7 @@ budgetRouter.put("/budget/:id", authenticateToken, async (req, res) => {
 // Delete a budget
 budgetRouter.delete("/budget/:id", authenticateToken, async (req, res) => {
   const { id } = req.params;
-  const userId = req.user.userId;
+  const userId = req.user.id;
 
   try {
     const budget = await prisma.budget.deleteMany({
@@ -74,9 +74,7 @@ budgetRouter.delete("/budget/:id", authenticateToken, async (req, res) => {
     });
 
     if (budget.count === 0) {
-      return res
-        .status(404)
-        .json({ error: "Budget not found or not authorized" });
+      res.status(404).json({ error: "Budget not found " });
     }
 
     res.json({ message: "Budget deleted successfully" });
