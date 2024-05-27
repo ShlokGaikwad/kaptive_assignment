@@ -11,28 +11,31 @@ This project is a backend system for managing personal finances. It includes fea
 - Category-wise expense tracking (e.g., groceries, rent, entertainment)
 
 ## Technologies Used
-Node.js
-Express.js
-Prisma ORM
-PostgreSQL
-JWT (JSON Web Tokens)
-Database Schema
-Users Table: Stores user information.
-Transactions Table: Tracks income and expenses.
-Categories Table: Stores expense categories.
-Budgets Table: Stores budget information.
-API Endpoints
-User Authentication
-Register a new user
+- Node.js
+- Express.js
+- Prisma ORM
+- PostgreSQL
+- JWT (JSON Web Tokens)
 
-URL: POST /auth/register
-Request Body:
-json
-Copy code
-{
-  "username": "string",
-  "password": "string"
-}
+## Database Schema
+- Users Table: Stores user information.
+- Transactions Table: Tracks income and expenses.
+- Categories Table: Stores expense categories.
+- Budgets Table: Stores budget information.
+- 
+## API Endpoints
+### User Authentication
+- Register a new user
+
+  - URL: POST /auth/register
+  - Request Body:
+  ```bash
+  {
+    "username": "string",
+    "password": "string"
+  }
+  ```
+
 Login a user
 
 URL: POST /auth/login
