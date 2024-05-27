@@ -1,3 +1,6 @@
+-- CreateEnum
+CREATE TYPE "TransactionType" AS ENUM ('income', 'expense');
+
 -- CreateTable
 CREATE TABLE "User" (
     "id" SERIAL NOT NULL,
@@ -13,7 +16,7 @@ CREATE TABLE "User" (
 CREATE TABLE "Transaction" (
     "id" SERIAL NOT NULL,
     "amount" DOUBLE PRECISION NOT NULL,
-    "type" TEXT NOT NULL,
+    "type" "TransactionType" NOT NULL DEFAULT 'expense',
     "date" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "categoryId" INTEGER NOT NULL,
     "userId" INTEGER NOT NULL,
