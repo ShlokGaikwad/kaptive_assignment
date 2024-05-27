@@ -64,8 +64,8 @@ This project is a backend system for managing personal finances. It includes fea
 ## Transactions
  - Get all transactions
 
-  - URL: GET /transactions
-  - Requires authentication
+    - URL: GET /transactions
+    - Requires authentication
 - Create a new transaction
 
   - URL: POST /transaction
@@ -78,6 +78,11 @@ This project is a backend system for managing personal finances. It includes fea
   "categoryId": "number"
 }
 ```
+-  transactions
+  -  URL: GET /transactions
+  -  Requires authentication
+  -  Request Body:
+
 ## Budgets
 - Get all budgets
 
