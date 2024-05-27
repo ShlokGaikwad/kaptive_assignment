@@ -41,16 +41,14 @@ reportRouter.get("/category-wise", authenticateToken, async (req, res) => {
   const userId = req.user.id;
 
   try {
-    // Fetch all transactions for the user
     const transactions = await prisma.transaction.findMany({
       where: { userId },
       include: { category: true },
     });
 
-    // Aggregate the total amount per category and type
     const categoryReport = transactions.reduce((acc, transaction) => {
       const categoryName = transaction.category.name;
-      const type = transaction.type; // "income" or "expense"
+      const type = transaction.type;
 
       if (!acc[categoryName]) {
         acc[categoryName] = { income: 0, expense: 0 };
