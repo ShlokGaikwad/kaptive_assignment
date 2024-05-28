@@ -22,7 +22,7 @@ This project is a backend system for managing personal finances. It includes fea
 - Transactions Table: Tracks income and expenses.
 - Categories Table: Stores expense categories.
 - Budgets Table: Stores budget information.
-- 
+  
 ## API Endpoints
 ### User Authentication
 - Register a new user
@@ -168,8 +168,8 @@ npx prisma migrate dev
 npm start
 ```
 ## Usage
-1. Register a new user via the /auth/register endpoint.
-2. Authenticate the user via the /auth/login endpoint to receive a JWT token.
+1. Register a new user via the /register endpoint.
+2. Authenticate the user via the /login endpoint to receive a JWT token.
 3. Use the token to access other authenticated routes (e.g., creating transactions, budgets).
 ## Contributing
 1. Fork the repository.
